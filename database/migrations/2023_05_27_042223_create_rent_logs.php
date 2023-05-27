@@ -15,10 +15,10 @@ return new class extends Migration
     {
         Schema::create('rent_logs', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger("book_id");
-            $table->foreign('book_id')->references('id')->on('books');
             $table->unsignedBigInteger("user_id");
             $table->foreign('user_id')->references('id')->on('users');
+            $table->unsignedBigInteger("book_id");
+            $table->foreign('book_id')->references('id')->on('books');
             $table->date('rent_date');
             $table->date('return_date');
             $table->date('actual_return_date')->nullable();
