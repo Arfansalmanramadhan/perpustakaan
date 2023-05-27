@@ -33,7 +33,7 @@
                         </div>
                       </div>
                       <div class="mb row">
-                        <button type="submit" class="btn btn-primary">Login</button>
+                        <button type="submit" class="btn btn-primary">Primary</button>
                       </div>
                       <div class="mb row text-center">
                         <a href="register">Sign Up</a>

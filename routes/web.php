@@ -16,5 +16,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
+})->middleware("auth");
+Route::controller(AuthController::class)->group(function () {
+    Route::get("login", "login")->name("login");
+    Route::get("register", "register");
 });
-Route::get("login",[AuthController::class, "login"]);
