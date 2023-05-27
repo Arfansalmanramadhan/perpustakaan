@@ -13,11 +13,14 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('roles', function (Blueprint $table) {
+        Schema::create('books_catagory', function (Blueprint $table) {
             $table->id();
-            $table->string('name', 200);
+            $table->unsignedBigInteger("book_id");
+            $table->foreign('book_id')->references('id')->on('books');
+            $table->unsignedBigInteger("catagory_id");
+            $table->foreign('catagory_id')->references('id')->on('catagories');
             $table->timestamps();
-        }); 
+        });
     }
 
     /**
@@ -27,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('roles_tablel');
+        Schema::dropIfExists('books_catagory');
     }
 };

@@ -13,11 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('roles', function (Blueprint $table) {
+        Schema::create('books', function (Blueprint $table) {
             $table->id();
-            $table->string('name', 200);
+            $table->string('book_code', 255);
+            $table->string('title', 255)->default("in stock");
             $table->timestamps();
-        }); 
+        });
     }
 
     /**
@@ -27,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('roles_tablel');
+        Schema::dropIfExists('books');
     }
 };
