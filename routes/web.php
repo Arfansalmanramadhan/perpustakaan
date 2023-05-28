@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\UserController;
 use GuzzleHttp\Middleware;
 use Illuminate\Support\Facades\Route;
 
@@ -23,3 +25,5 @@ Route::controller(AuthController::class)->group(function () {
     Route::post("login", "authenticating");
     Route::get("register", "register");
 });
+Route::get("dashboard", [DashboardController::class, "index"])->middleware(["auth", "admin"]);
+Route::get("profile", [UserController::class, "profile"])->middleware(["auth", "client"]);
