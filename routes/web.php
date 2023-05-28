@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use GuzzleHttp\Middleware;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,5 +20,6 @@ Route::get('/', function () {
 })->middleware("auth");
 Route::controller(AuthController::class)->group(function () {
     Route::get("login", "login")->name("login");
+    Route::post("login", "authenticating");
     Route::get("register", "register");
 });

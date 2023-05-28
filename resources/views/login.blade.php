@@ -15,21 +15,25 @@
     </style>
 </head>
 <body>
-    <main class="main container d-flex justify-content-center align-items-center">
+    <main class="main container d-flex flex-column justify-content-center align-items-center">
+            @if (session('status'))
+            <div class="alert alert-danger">
+                {{ session('message') }}
+            </div>
+              @endif 
         <section class="container">
-            
-                <form action="" method="get">
+                <form action="" method="post">
                     @csrf
                     <div class="mb-3 row">
                         <label for="staticUrsername" class="col-sm-2 form-label">Usename</label>
                         <div class="col-sm-10">
-                          <input type="text" readonly class="form-control" id="staticUrsername" value="email@example.com">
+                          <input type="text"  class="form-control" id="staticUrsername"  required name="username">
                         </div>
                       </div>
                       <div class="mb-3 row">
                         <label for="inputPassword" class="col-sm-2 form-label">Password</label>
                         <div class="col-sm-10">
-                          <input type="password" class="form-control" id="inputPassword">
+                          <input type="password" class="form-control" id="inputPassword" required name="password">
                         </div>
                       </div>
                       <div class="mb row">
