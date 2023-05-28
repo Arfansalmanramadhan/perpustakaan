@@ -24,6 +24,7 @@ Route::get('/', function () {
 Route::controller(AuthController::class)->group(function () {
     Route::get("login", "login")->name("login")->middleware("guestt");
     Route::post("login", "authenticating")->middleware("guestt");
+    Route::get("logout", "logout")->middleware("auth");
     Route::get("register", "register")->middleware("guestt");
 });
 Route::get("dashboard", [DashboardController::class, "index"])->middleware(["auth", "admin"]);

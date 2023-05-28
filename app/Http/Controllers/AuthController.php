@@ -48,4 +48,11 @@ class AuthController extends Controller
         Session::flash("message", "akun kamu tidak terdaftar");
         return redirect("/login");
     }
+    public function logout(Request $request)
+    {
+        Auth::logout();
+        $request->session()->invalidate();
+        $request->session()->regenerate();
+        return redirect("login");
+    }
 }
