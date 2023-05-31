@@ -21,22 +21,34 @@
                 <form action="" method="get">
                     @csrf
                     <div class="mb-3 row">
-                        <label for="staticUrsername" class="col-sm-2 form-label">Usename</label>
-                        <div class="col-sm-10">
-                          <input type="text" readonly class="form-control" id="staticUrsername" value="email@example.com">
-                        </div>
+                      <label for="username" class="col-sm-2 form-label">Usename</label>
+                      <div class="col-sm-10">
+                        <input type="text"  class="form-control" id="username"  required name="username">
                       </div>
-                      <div class="mb-3 row">
-                        <label for="inputPassword" class="col-sm-2 form-label">Password</label>
-                        <div class="col-sm-10">
-                          <input type="password" class="form-control" id="inputPassword">
-                        </div>
+                    </div>
+                    <div class="mb-3 row">
+                      <label for="password" class="col-sm-2 form-label">Password</label>
+                      <div class="col-sm-10">
+                        <input type="password" class="form-control" id="password" required name="password">
                       </div>
+                    </div>
+                    <div class="mb-3 row">
+                      <label for="phone" class="col-sm-2 form-label">Phone</label>
+                      <div class="col-sm-10">
+                        <input type="text"  class="form-control" id="phone"  required name="phone">
+                      </div>
+                    </div>
+                    <div class="mb-3 row">
+                      <label for="address" class="col-sm-2 form-label">Address</label>
+                      <div class="col-sm-10">
+                        <textarea class="form-control" id="address" required name="Address" cols="10" rows="0"></textarea>
+                      </div>
+                    </div>
                       <div class="mb row">
                         <button type="submit" class="btn btn-primary">Primary</button>
                       </div>
                       <div class="mb row text-center">
-                        <a href="register">Sign Up</a>
+                        <a href="login">Login</a>
                       </div>
                 </form>
              
