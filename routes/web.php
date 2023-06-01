@@ -26,6 +26,7 @@ Route::controller(AuthController::class)->group(function () {
     Route::post("login", "authenticating")->middleware("guestt");
     Route::get("logout", "logout")->middleware("auth");
     Route::get("register", "register")->middleware("guestt");
+    Route::post("register", "registerproses")->middleware("guestt");
 });
 Route::get("dashboard", [DashboardController::class, "index"])->middleware(["auth", "admin"]);
 Route::get("profile", [UserController::class, "profile"])->middleware(["auth", "client"]);
