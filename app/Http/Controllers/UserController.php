@@ -11,4 +11,8 @@ class UserController extends Controller
         return view("profile");
         // $request->session()->flush();
     }
+    public function user()
+    {
+        return view("user");
+    }
 }

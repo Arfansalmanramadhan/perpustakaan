@@ -6,18 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Perpustakaan | @yield('title')</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
-    <style>
-        .main {
-            height: 100vh;
-        }
-        .sidebar{
-            background: rgba(18, 18, 18, 0.645)
-        }
-        /* .sidebar ul {
-            list-style: none;
-        } */
-
-    </style>
+    <link rel="stylesheet" href="{{asset('css/css.css ')}}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 </head>
 <body>
     <main class="main d-flex flex-column justify-content-between">
@@ -39,27 +29,27 @@
                             @if (Auth::user()->roles_id == 1)
                                 
                                 <li class="nav-item">
-                                  <a class="nav-link active" aria-current="page" href="dashboard">Dashboard</a>
+                                  <a  aria-current="page" href="dashboard" @if ( request()->route()->uri == "dashboard") class="  active" @endif>Dashboard</a>
                                 </li>
                                 <li class="nav-item">
-                                  <a class="nav-link" href="books">buku</a>
+                                  <a   href="books" @if ( request()->route()->uri == "books") class="  active" @endif>buku</a>
                                 </li>
                                 <li class="nav-item">
-                                  <a class="nav-link" href="#">Kategori</a>
+                                  <a   href="kategori" @if ( request()->route()->uri == "kategori") class="  active" @endif>Kategori</a>
                                 </li>
                                 <li class="nav-item">
-                                  <a class="nav-link" href="#">Pengguna</a>
+                                  <a   href="user" @if ( request()->route()->uri == "user") class="  active" @endif>Pengguna</a>
                                 </li>
                                 <li class="nav-item">
-                                  <a class="nav-link" href="#">Peminjam</a>
+                                  <a  href="pinjam" @if ( request()->route()->uri == "pinjam") class="  active" @endif>Peminjam</a>
                                 </li>
                                 <li class="nav-item">
-                                  <a class="nav-link" href="logout">Keluar</a>
+                                  <a class="nav-link " href="logout">Keluar</a>
                                 </li>
                                 
                                 @else     
                                 <li class="nav-item">
-                                  <a class="nav-link" href="profile">Profile</a>
+                                  <a @if ( request()->route()->uri == "profile")class=" active" @endif href="profile">Profile</a>
                                 </li>
                                 <li class="nav-item">
                                   <a class="nav-link" href="logout">Keluar</a>
