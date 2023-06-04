@@ -3,6 +3,8 @@
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BookController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\kategoriController;
+use App\Http\Controllers\pempinjamController;
 use App\Http\Controllers\UserController;
 use GuzzleHttp\Middleware;
 use Illuminate\Support\Facades\Route;
@@ -30,4 +32,7 @@ Route::controller(AuthController::class)->group(function () {
 });
 Route::get("dashboard", [DashboardController::class, "index"])->middleware(["auth", "admin"]);
 Route::get("profile", [UserController::class, "profile"])->middleware(["auth", "client"]);
+Route::get("user", [UserController::class, "user"])->middleware("auth");
 Route::get("books", [BookController::class, "index"])->middleware("auth");
+Route::get("kategori", [kategoriController::class, "index"])->middleware("auth");
+Route::get("pinjam", [pempinjamController::class, "index"])->middleware("auth");

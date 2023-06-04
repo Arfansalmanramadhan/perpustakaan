@@ -16,7 +16,10 @@
         /* .sidebar ul {
             list-style: none;
         } */
-
+        .sidebar a:hover {
+          background: black;
+          color: white;
+        }
     </style>
 </head>
 <body>
@@ -39,19 +42,19 @@
                             @if (Auth::user()->roles_id == 1)
                                 
                                 <li class="nav-item">
-                                  <a class="nav-link active" aria-current="page" href="dashboard">Dashboard</a>
+                                  <a class="nav-link " aria-current="page" href="dashboard">Dashboard</a>
                                 </li>
                                 <li class="nav-item">
                                   <a class="nav-link" href="books">buku</a>
                                 </li>
                                 <li class="nav-item">
-                                  <a class="nav-link" href="#">Kategori</a>
+                                  <a class="nav-link" href="kategori">Kategori</a>
                                 </li>
                                 <li class="nav-item">
-                                  <a class="nav-link" href="#">Pengguna</a>
+                                  <a class="nav-link" href="user">Pengguna</a>
                                 </li>
                                 <li class="nav-item">
-                                  <a class="nav-link" href="#">Peminjam</a>
+                                  <a class="nav-link" href="pinjam">Peminjam</a>
                                 </li>
                                 <li class="nav-item">
                                   <a class="nav-link" href="logout">Keluar</a>

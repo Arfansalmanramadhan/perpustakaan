@@ -9,6 +9,6 @@ class BookController extends Controller
     public function index(Request $request)
     {
         // dd("halaman book");
-        $request->session()->flush();
+        return view("book");
     }
 }
