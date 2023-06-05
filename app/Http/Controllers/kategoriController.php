@@ -12,4 +12,8 @@ class kategoriController extends Controller
         $daftarKategori = Catagory::all();
         return view("category", ["daftarKategori" => $daftarKategori]);
     }
+    public function tambah()
+    {
+        return view("tambah-kategori");
+    }
 }
