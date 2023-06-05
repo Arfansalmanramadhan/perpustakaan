@@ -16,4 +16,8 @@ class kategoriController extends Controller
     {
         return view("tambah-kategori");
     }
+    public function store(Request $request)
+    {
+        $ketegori = Catagory::create($request->all());
+    }
 }

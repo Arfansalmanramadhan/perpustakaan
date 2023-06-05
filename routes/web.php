@@ -36,4 +36,5 @@ Route::get("user", [UserController::class, "user"])->middleware("auth");
 Route::get("books", [BookController::class, "index"])->middleware("auth");
 Route::get("kategori", [kategoriController::class, "index"])->middleware("auth");
 Route::get("tambah-kategori", [kategoriController::class, "tambah"])->middleware("auth");
+Route::post("tambah-kategori", [kategoriController::class, "store"])->middleware("auth");
 Route::get("pinjam", [pempinjamController::class, "index"])->middleware("auth");
