@@ -41,5 +41,6 @@ Route::get("edit-kategori/{slug}", [kategoriController::class, "edit"])->middlew
 Route::put("edit-kategori/{slug}", [kategoriController::class, "update"])->middleware("auth");
 Route::get("hapus-kategori/{slug}", [kategoriController::class, "hapus"])->middleware("auth");
 Route::get("hapuss-kategori/{slug}", [kategoriController::class, "hapuss"])->middleware("auth");
-Route::get("di hapus-kategori", [kategoriController::class, "hapusss"])->middleware("auth");
+Route::get("dihapus-kategori", [kategoriController::class, "hapusss"])->middleware("auth");
+Route::get("memulih-kategori/{slug}", [kategoriController::class, "memulihkan"])->middleware("auth");
 Route::get("pinjam", [pempinjamController::class, "index"])->middleware("auth");

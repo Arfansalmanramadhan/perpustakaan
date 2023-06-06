@@ -4,7 +4,7 @@
 {{-- @section('page-name', "Dashboard") --}}
     
 @section('content')
-    <h1>Daftar Kategori</h1>
+    <h1>Lihat Data Terhapus</h1>
     <div class="mt-5 d-flex justify-content-end">
         <a href="kategori" class="btn btn-primary">Kembali</a>
     </div>
@@ -31,7 +31,7 @@
                         <td>{{$loop->iteration}}</td>
                         <td>{{$item->name}}</td>
                         <td>
-                            <a href="memulihkan-kategori/{{$item->slug}}">Memulihkan</a>
+                            <a href="memulih-kategori/{{$item->slug}}">Memulihkan</a>
                         </td>
                     </tr>
                 @endforeach

@@ -53,12 +53,19 @@ class kategoriController extends Controller
             ->first()
             ->delete();
         return redirect("kategori")->with("status", "Hapus Kategri sukses");
-        # code...
     }
     public function hapusss()
     {
         $lihatdataterhapus = Catagory::onlyTrashed()->get();
         // dd($lihatdataterhapus);
         return view("lihatdatakategoriterhapus", ["lihatdataterhapus" => $lihatdataterhapus]);
+    }
+    public function memulihkan($slug)
+    {
+        $kategori = Catagory::withTrashed()
+            ->where("slug", $slug)
+            ->first()
+            ->restore();
+        return redirect("kategori")->with("status", "Memulihkan Kategri sukses");
     }
 }
