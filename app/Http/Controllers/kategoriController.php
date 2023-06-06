@@ -24,7 +24,7 @@ class kategoriController extends Controller
         $ketegori = Catagory::create($request->all());
         return redirect("kategori")->with("status", "Tambah Kategri sukses");
     }
-    public function edit( $slug)
+    public function edit($slug)
     {
         $kategorii = Catagory::where('slug', $slug)->first();
         return view("edit-kategori", ["kategori" => $kategorii]);
@@ -40,5 +40,19 @@ class kategoriController extends Controller
         $kategori->slug = null;
         $kategori->update($request->all());
         return redirect("kategori")->with("status", "Edit Kategri sukses");
+    }
+    public function hapus($slug)
+    {
+        $kategori = Catagory::where('slug', $slug)->first();
+        return view("hapus-kategori", ["kategori" => $kategori]);
+        // dd($slug);  
+    }
+    public function hapuss($slug)
+    {
+        $kategori = Catagory::where('slug', $slug)
+            ->first()
+            ->delete();
+        return redirect("kategori")->with("status", "Hapus Kategri sukses");
+        # code...
     }
 }

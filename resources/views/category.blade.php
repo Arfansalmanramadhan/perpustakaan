@@ -32,7 +32,7 @@
                         <td>{{$item->name}}</td>
                         <td>
                             <a href="edit-kategori/{{$item->slug}}">Edit</a>
-                            <a href="#">Delete</a>
+                            <a href="hapus-kategori/{{$item->slug}}">Delete</a>
                         </td>
                     </tr>
                 @endforeach
