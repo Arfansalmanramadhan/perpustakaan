@@ -24,4 +24,21 @@ class kategoriController extends Controller
         $ketegori = Catagory::create($request->all());
         return redirect("kategori")->with("status", "Tambah Kategri sukses");
     }
+    public function edit( $slug)
+    {
+        $kategorii = Catagory::where('slug', $slug)->first();
+        return view("edit-kategori", ["kategori" => $kategorii]);
+        // dd($request->all());
+    }
+    public function update(Request $request, $slug)
+    {
+        $validated = $request->validate([
+            "name" => "required |unique:catagories|max:200"
+        ]);
+        $kategori = Catagory::where("slug", $slug)
+            ->first();
+        $kategori->slug = null;
+        $kategori->update($request->all());
+        return redirect("kategori")->with("status", "Edit Kategri sukses");
+    }
 }

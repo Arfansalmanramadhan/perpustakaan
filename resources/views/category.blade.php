@@ -31,7 +31,7 @@
                         <td>{{$loop->iteration}}</td>
                         <td>{{$item->name}}</td>
                         <td>
-                            <a href="#">Edit</a>
+                            <a href="edit-kategori/{{$item->slug}}">Edit</a>
                             <a href="#">Delete</a>
                         </td>
                     </tr>
