@@ -19,9 +19,9 @@ class kategoriController extends Controller
     public function store(Request $request)
     {
         $validated = $request->validate([
-            "name" =>"required |unique:catagories|max:200"
+            "name" => "required |unique:catagories|max:200"
         ]);
         $ketegori = Catagory::create($request->all());
-        return redirect("category");
+        return redirect("kategori")->with("status", "Tambah Kategri sukses");
     }
 }
