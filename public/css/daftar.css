@@ -1,0 +1,15 @@
+.main{
+    height: 100vh;
+    box-sizing: border-box;
+}
+.container{
+  margin: auto;
+}
+.kontak{
+  max-width: 500px;
+  background: #f1f7fe;
+  overflow: hidden;
+  border-radius: 16px;
+  color: #010101;
+  margin: auto;
+}
