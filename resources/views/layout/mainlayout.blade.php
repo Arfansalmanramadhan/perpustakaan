@@ -26,7 +26,7 @@
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 
                             {{-- {{Auth::user()->role_id == 1}} --}}
-                            @if (Auth::user()->roles_id == 1)
+                            @if (Auth::user()->role_id == 1)
                                 
                                 <li class="nav-item">
                                   <a  aria-current="page" href="dashboard" @if ( request()->route()->uri == "dashboard") class="  active" @endif>Dashboard</a>

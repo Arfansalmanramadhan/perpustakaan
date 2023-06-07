@@ -16,7 +16,8 @@ return new class extends Migration
         Schema::create('books', function (Blueprint $table) {
             $table->id();
             $table->string('book_code', 255);
-            $table->string('title', 255)->default("in stock");
+            $table->string('title', 255);
+            $table->string('status', 255)->default('In stock');
             $table->timestamps();
         });
     }
