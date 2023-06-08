@@ -36,6 +36,7 @@ Route::get("user", [UserController::class, "user"])->middleware("auth");
 Route::controller(BookController::class)->group(function(){
     Route::get("books","index")->middleware("auth");
     Route::get("tambah-buku","tambah")->middleware("auth");
+    Route::post("tambah-buku","store")->middleware("auth");
 });
 Route::controller(kategoriController::class)->group(function () {
     Route::get("kategori",  "index")->middleware("auth");

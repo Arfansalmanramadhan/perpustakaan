@@ -16,4 +16,9 @@ class BookController extends Controller
     {
         return view("tambah-buku");
     }
+    public function store(Request $request)
+    {
+        $Buku = Book::create($request->all());
+        return redirect("books")->with("status", "Tambah Buku sukses");
+    }
 }
