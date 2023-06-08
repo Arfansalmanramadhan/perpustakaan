@@ -33,9 +33,10 @@ Route::controller(AuthController::class)->group(function () {
 Route::get("dashboard", [DashboardController::class, "index"])->middleware(["auth", "admin"]);
 Route::get("profile", [UserController::class, "profile"])->middleware(["auth", "client"]);
 Route::get("user", [UserController::class, "user"])->middleware("auth");
-Route::get("books", [BookController::class, "index"])->middleware("auth");
+Route::controller(BookController::class)->group(function(){
+    Route::get("books","index")->middleware("auth");
+});
 Route::controller(kategoriController::class)->group(function () {
-
     Route::get("kategori",  "index")->middleware("auth");
     Route::get("tambah-kategori",  "tambah")->middleware("auth");
     Route::post("tambah-kategori",  "store")->middleware("auth");
