@@ -15,20 +15,20 @@
             </ul>
         </div>
         @endif
-        <form  method="post" action="tambah-buku">
+        <form  method="post" action="tambah-buku" enctype="multipart/form-data">
             @csrf
             <div>
-                <label for="name" class="form-label">Kode : </label>
-                <input type="text" name="book_code" class="form-control" placeholder="Kode buku">
+                <label for="book_code" class="form-label">Kode : </label>
+                <input type="text" name="book_code" class="form-control" placeholder="Kode buku" value="{{old("book_code")}}">
             </div>
             <div>
-                <label for="name" class="form-label">Judul : </label>
-                <input type="text" name="title" class="form-control" placeholder="Judul buku">
-            </div>
-            {{-- <div>
-                <label for="name" class="form-label">cover : </label>
+                <label for="title" class="form-label">Judul : </label>
+                <input type="text" name="title" class="form-control" placeholder="Judul buku" value="{{old("title")}}">
+            </div>z
+            <div>
+                <label for="img" class="form-label">Kover : </label>
                 <input type="file" name="cover" class="form-control"">
-            </div> --}}
+            </div>
             <div class="mt-4">
                 <input type="submit" class="btn btn-success" value="Simpan">
             </div>
