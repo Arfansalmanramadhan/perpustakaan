@@ -27,11 +27,11 @@ class Book extends Model
         ];
     }
     /**
-     * The Categoriyes that belong to the Book
+     * The Catagories that belong to the Book
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
      */
-    public function Categoriyes(): BelongsToMany
+    public function Catagories(): BelongsToMany
     {
         return $this->belongsToMany(Catagory::class, 'books_catagory','book_id','catagory_id');
     }

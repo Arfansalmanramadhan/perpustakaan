@@ -4,6 +4,7 @@
 @section('page-name', "Dashboard")
     
 @section('content')
+<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
     <h1>Tambah Data Baru</h1>
     <div class="mt-5 w-50">
         @if ($errors->any())
@@ -31,7 +32,7 @@
             </div>
             <div class="md-3">
                 <label for="kategori" class="form-label">Kover : </label>
-                <select  name="catagoties" class="form-control" multiple>
+                <select  name="catagories[]" class="form-control select-multiple" multiple>
                     <option value="">Pilih Kategori</option>
                     @foreach ($kategori as $item)
                         <option value="{{$item->id}}">{{$item->name}}</option>
@@ -43,4 +44,11 @@
             </div>
         </form>
     </div>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('.select-multiple').select2();
+        });
+    </script>
 @endsection
