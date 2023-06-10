@@ -2,10 +2,11 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Cviebrock\EloquentSluggable\Sluggable;
+use App\Models\Catagory;
 use Illuminate\Database\Eloquent\Model;
-
+use Cviebrock\EloquentSluggable\Sluggable;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 class Book extends Model
 {
@@ -24,5 +25,14 @@ class Book extends Model
                 'source' => 'title'
             ]
         ];
+    }
+    /**
+     * The Categoriyes that belong to the Book
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
+    public function Categoriyes(): BelongsToMany
+    {
+        return $this->belongsToMany(Catagory::class, 'books_catagory','book_id','catagory_id');
     }
 }
