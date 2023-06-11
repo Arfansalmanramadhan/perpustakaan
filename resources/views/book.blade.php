@@ -23,6 +23,7 @@
                     <th>No</th>
                     <th>Kode</th>
                     <th>Judul</th>
+                    <th>Kategori</th>
                     <th>Status</th>
                     <th>Aktif</th>
                 </tr>
@@ -33,6 +34,11 @@
                         <td>{{$loop->iteration}}</td>
                         <td>{{$item->book_code}}</td>
                         <td>{{$item->title}}</td>
+                        <td>
+                            @foreach ($item->catagories as $kategori)
+                                {{$kategori->name}}
+                            @endforeach                        
+                        </td>
                         <td>{{$item->status}}</td>
                         <td>
                             <a href="edit-buku/{{$item->slug}}">Edit</a>
