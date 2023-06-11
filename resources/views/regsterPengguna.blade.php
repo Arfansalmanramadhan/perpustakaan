@@ -29,7 +29,7 @@
                             @endif
                         </td>
                         <td>
-                            <a href="/edit-buku/{{$item->slug}}">Edit</a>
+                            <a href="/user-detail/{{$item->slug}}">Detail</a>
                         </td>
                     </tr>
                 @endforeach

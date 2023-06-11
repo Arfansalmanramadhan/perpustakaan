@@ -26,4 +26,18 @@ class UserController extends Controller
             ->get();
         return view("regsterPengguna", ["register" => $register]);
     }
+    public function detail($slug)
+    {
+        // dd($slug);
+        $user = User::where('slug', $slug)
+            ->first();
+        return view('user-detail', ["user" => $user]);
+    }
+    public function menyetujui($slug)
+    {
+        $user = User::where('slug', $slug)->first();
+        $user->status = 'active';
+        $user->save();
+        return redirect("user-detail/" . $slug)->with("status", "aktif perngguna sukses");
+    }
 }

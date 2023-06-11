@@ -35,6 +35,8 @@ Route::get("profile", [UserController::class, "profile"])->middleware(["auth", "
 Route::controller(UserController::class)->group(function(){
     Route::get("user", "user")->middleware("auth");
     Route::get("regigteruser", "register")->middleware("auth");
+    Route::get("user-detail/{slug}", "detail")->middleware("auth");
+    Route::get("user-approve/{slug}", "menyetujui")->middleware("auth");
 });
 Route::controller(BookController::class)->group(function(){
     Route::get("books","index")->middleware("auth");
