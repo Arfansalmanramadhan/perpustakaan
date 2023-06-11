@@ -5,6 +5,7 @@ use App\Http\Controllers\BookController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\kategoriController;
 use App\Http\Controllers\pempinjamController;
+use App\Http\Controllers\PublicController;
 use App\Http\Controllers\UserController;
 use GuzzleHttp\Middleware;
 use Illuminate\Support\Facades\Route;
@@ -20,9 +21,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [PublicController::class, "index"]);
 Route::controller(AuthController::class)->group(function () {
     Route::get("login", "login")->name("login")->middleware("guestt");
     Route::post("login", "authenticating")->middleware("guestt");
