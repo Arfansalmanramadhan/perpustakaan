@@ -32,7 +32,16 @@ Route::controller(AuthController::class)->group(function () {
 });
 Route::get("dashboard", [DashboardController::class, "index"])->middleware(["auth", "admin"]);
 Route::get("profile", [UserController::class, "profile"])->middleware(["auth", "client"]);
-Route::get("user", [UserController::class, "user"])->middleware("auth");
+Route::controller(UserController::class)->group(function(){
+    Route::get("user", "user")->middleware("auth");
+    Route::get("regigteruser", "register")->middleware("auth");
+    Route::get("user-detail/{slug}", "detail")->middleware("auth");
+    Route::get("user-approve/{slug}", "menyetujui")->middleware("auth");
+    Route::get("user-buruk/{slug}", "delete")->middleware("auth");
+    Route::get("user-hapus/{slug}", "hapus")->middleware("auth");
+    Route::get("dihapus-user", "lihat")->middleware("auth");
+    Route::get("memulih-user/{slug}", "memulihkan")->middleware("auth");
+});
 Route::controller(BookController::class)->group(function(){
     Route::get("books","index")->middleware("auth");
     Route::get("tambah-buku","tambah")->middleware("auth");

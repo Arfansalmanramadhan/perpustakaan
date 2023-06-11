@@ -6,7 +6,7 @@
 @section('content')
     <h1>Lihat Data Terhapus</h1>
     <div class="mt-5 d-flex justify-content-end">
-        <a href="/kategori" class="btn btn-primary">Kembali</a>
+        <a href="/user" class="btn btn-primary">Kembali</a>
     </div>
     
     <div class="mt-5">
@@ -22,6 +22,7 @@
                 <tr>
                     <th>No</th>
                     <th>Nama</th>
+                    <th>No Telepon</th>
                     <th>Aktif</th>
                 </tr>
             </thead>
@@ -29,9 +30,10 @@
                 @foreach ($lihatdataterhapus as $item)
                     <tr>
                         <td>{{$loop->iteration}}</td>
-                        <td>{{$item->name}}</td>
+                        <td>{{$item->username}}</td>
+                        <td>{{$item->phone}}</td>
                         <td>
-                            <a href="memulih-kategori/{{$item->slug}}">Memulihkan</a>
+                            <a href="memulih-user/{{$item->slug}}">Memulihkan</a>
                         </td>
                     </tr>
                 @endforeach
