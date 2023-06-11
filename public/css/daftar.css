@@ -1,0 +1,27 @@
+.main {
+    height: 100vh;
+    box-sizing: border-box;
+}
+.container {
+    margin: auto;
+}
+.kontak {
+    max-width: 500px;
+    background: #f1f7fe;
+    overflow: hidden;
+    border-radius: 16px;
+    color: #010101;
+    margin: auto;
+}
+.login {
+    background-image: url(../img/bggambar.jpg);
+    background-position: center;
+    background-size: cover;
+}
+.register {
+    background-image: url(../img/bggambar.jpg);
+    background-position: center;
+    background-size: cover;
+    /* background-repeat: no-repeat;
+    max-width: 100%; */
+}

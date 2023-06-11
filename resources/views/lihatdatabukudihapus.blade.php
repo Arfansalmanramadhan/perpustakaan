@@ -1,14 +1,14 @@
 @extends('layout.mainlayout')
 
-@section('title', "book")
+@section('title', "category")
+{{-- @section('page-name', "Dashboard") --}}
     
 @section('content')
-    <h1>Daftar buku</h1>
-
+    <h1>Lihat Data Terhapus</h1>
     <div class="mt-5 d-flex justify-content-end">
-        <a href="dihapus-buku" class="btn btn-secondary me-3">Lihat Data Terhapus</a>
-        <a href="tambah-buku" class="btn btn-primary">Tambah Data</a>
+        <a href="/books" class="btn btn-primary">Kembali</a>
     </div>
+    
     <div class="mt-5">
             @if (session('status'))
             <div class="alert alert-success">
@@ -23,26 +23,17 @@
                     <th>No</th>
                     <th>Kode</th>
                     <th>Judul</th>
-                    <th>Kategori</th>
-                    <th>Status</th>
                     <th>Aktif</th>
                 </tr>
             </thead>
             <tbody>
-                @foreach ($books as $item)
+                @foreach ($lihatdataterhapus as $item)
                     <tr>
                         <td>{{$loop->iteration}}</td>
                         <td>{{$item->book_code}}</td>
                         <td>{{$item->title}}</td>
                         <td>
-                            @foreach ($item->catagories as $kategori)
-                                {{$kategori->name}}
-                            @endforeach                        
-                        </td>
-                        <td>{{$item->status}}</td>
-                        <td>
-                            <a href="/edit-buku/{{$item->slug}}">Edit</a>
-                            <a href="/hapus-buku/{{$item->slug}}">Delete</a>
+                            <a href="memulih-buku/{{$item->slug}}">Memulihkan</a>
                         </td>
                     </tr>
                 @endforeach

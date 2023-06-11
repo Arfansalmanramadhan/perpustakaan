@@ -43,6 +43,6 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
     protected $attributes =[
-        "roles_id" => 2, 
+        "role_id" => 2, 
     ];
 }

@@ -33,14 +33,26 @@ Route::controller(AuthController::class)->group(function () {
 Route::get("dashboard", [DashboardController::class, "index"])->middleware(["auth", "admin"]);
 Route::get("profile", [UserController::class, "profile"])->middleware(["auth", "client"]);
 Route::get("user", [UserController::class, "user"])->middleware("auth");
-Route::get("books", [BookController::class, "index"])->middleware("auth");
-Route::get("kategori", [kategoriController::class, "index"])->middleware("auth");
-Route::get("tambah-kategori", [kategoriController::class, "tambah"])->middleware("auth");
-Route::post("tambah-kategori", [kategoriController::class, "store"])->middleware("auth");
-Route::get("edit-kategori/{slug}", [kategoriController::class, "edit"])->middleware("auth");
-Route::put("edit-kategori/{slug}", [kategoriController::class, "update"])->middleware("auth");
-Route::get("hapus-kategori/{slug}", [kategoriController::class, "hapus"])->middleware("auth");
-Route::get("hapuss-kategori/{slug}", [kategoriController::class, "hapuss"])->middleware("auth");
-Route::get("dihapus-kategori", [kategoriController::class, "hapusss"])->middleware("auth");
-Route::get("memulih-kategori/{slug}", [kategoriController::class, "memulihkan"])->middleware("auth");
+Route::controller(BookController::class)->group(function(){
+    Route::get("books","index")->middleware("auth");
+    Route::get("tambah-buku","tambah")->middleware("auth");
+    Route::post("tambah-buku","store")->middleware("auth");
+    Route::get("edit-buku/{slug}","edit")->middleware("auth");
+    Route::post("edit-buku/{slug}","update")->middleware("auth");
+    Route::get("hapus-buku/{slug}","hapus")->middleware("auth");
+    Route::get("hapuss-buku/{slug}","hapuss")->middleware("auth");
+    Route::get("dihapus-buku","hapusss")->middleware("auth");
+    Route::get("memulih-buku/{slug}","memulihkan")->middleware("auth");
+});
+Route::controller(kategoriController::class)->group(function () {
+    Route::get("kategori",  "index")->middleware("auth");
+    Route::get("tambah-kategori",  "tambah")->middleware("auth");
+    Route::post("tambah-kategori",  "store")->middleware("auth");
+    Route::get("edit-kategori/{slug}",  "edit")->middleware("auth");
+    Route::put("edit-kategori/{slug}",  "update")->middleware("auth");
+    Route::get("hapus-kategori/{slug}",  "hapus")->middleware("auth");  
+    Route::get("hapuss-kategori/{slug}",  "hapuss")->middleware("auth");
+    Route::get("dihapus-kategori",  "hapusss")->middleware("auth");
+    Route::get("memulih-kategori/{slug}",  "memulihkan")->middleware("auth");
+});
 Route::get("pinjam", [pempinjamController::class, "index"])->middleware("auth");

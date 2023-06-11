@@ -26,22 +26,22 @@
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 
                             {{-- {{Auth::user()->role_id == 1}} --}}
-                            @if (Auth::user()->roles_id == 1)
+                            @if (Auth::user()->role_id == 1)
                                 
                                 <li class="nav-item">
-                                  <a  aria-current="page" href="dashboard" @if ( request()->route()->uri == "dashboard") class="  active" @endif>Dashboard</a>
+                                  <a  aria-current="page" href="/dashboard" @if ( request()->route()->uri == "dashboard") class="  active" @endif>Dashboard</a>
                                 </li>
                                 <li class="nav-item">
-                                  <a   href="books" @if ( request()->route()->uri == "books") class="  active" @endif>buku</a>
+                                  <a   href="/books" @if ( request()->route()->uri == "books") class="  active" @endif>buku</a>
                                 </li>
                                 <li class="nav-item">
-                                  <a   href="kategori" @if ( request()->route()->uri == "kategori") class="  active" @endif>Kategori</a>
+                                  <a   href="/kategori" @if ( request()->route()->uri == "kategori") class="  active" @endif>Kategori</a>
                                 </li>
                                 <li class="nav-item">
-                                  <a   href="user" @if ( request()->route()->uri == "user") class="  active" @endif>Pengguna</a>
+                                  <a   href="/user" @if ( request()->route()->uri == "user") class="  active" @endif>Pengguna</a>
                                 </li>
                                 <li class="nav-item">
-                                  <a  href="pinjam" @if ( request()->route()->uri == "pinjam") class="  active" @endif>Peminjam</a>
+                                  <a  href="/pinjam" @if ( request()->route()->uri == "pinjam") class="  active" @endif>Peminjam</a>
                                 </li>
                                 <li class="nav-item">
                                   <a class="nav-link " href="logout">Keluar</a>
