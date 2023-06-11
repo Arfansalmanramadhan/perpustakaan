@@ -44,12 +44,18 @@
                                       <a  href="/pinjam" @if ( request()->route()->uri == "pinjam") class="  active" @endif>Peminjam</a>
                                     </li>
                                     <li class="nav-item">
+                                      <a @if ( request()->route()->uri == "/")class=" active" @endif href="/">Daftar Buku</a>
+                                    </li>
+                                    <li class="nav-item">
                                       <a class="nav-link " href="logout">Keluar</a>
                                     </li>
                                     
                                     @else     
                                     <li class="nav-item">
                                       <a @if ( request()->route()->uri == "profile")class=" active" @endif href="profile">Profile</a>
+                                    </li>
+                                    <li class="nav-item">
+                                      <a @if ( request()->route()->uri == "/")class=" active" @endif href="/">Daftar Buku</a>
                                     </li>
                                     <li class="nav-item">
                                       <a class="nav-link" href="logout">Keluar</a>
