@@ -38,6 +38,32 @@ class UserController extends Controller
         $user = User::where('slug', $slug)->first();
         $user->status = 'active';
         $user->save();
-        return redirect("user-detail/" . $slug)->with("status", "aktif perngguna sukses");
+        return redirect("user-detail/" . $slug)->with("status", "Menetujui perngguna sukses");
+    }
+    public function delete($slug)
+    {
+        $user = User::where('slug', $slug)->first();
+        return  view('hapus-user', ["user" => $user]);
+    }
+    public function hapus($slug)
+    {
+        $user = User::where('slug', $slug)
+            ->first()
+            ->delete();
+        return redirect("user")->with("status", "Hapus pengguna sukses");
+    }
+    public function lihat()
+    {
+        $lihatdataterhapus = User::onlyTrashed()->get();
+        return view("lihatdatauserdihapus", ["lihatdataterhapus" => $lihatdataterhapus]);
+    }
+    public function memulihkan($slug)
+    {
+        $user = User::withTrashed()
+            ->where("slug", $slug)
+            ->first()
+            ->restore();
+        return redirect("user")->with("status", "Memulihkan user sukses");
     }
 }
+    

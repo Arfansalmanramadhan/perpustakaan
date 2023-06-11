@@ -37,6 +37,10 @@ Route::controller(UserController::class)->group(function(){
     Route::get("regigteruser", "register")->middleware("auth");
     Route::get("user-detail/{slug}", "detail")->middleware("auth");
     Route::get("user-approve/{slug}", "menyetujui")->middleware("auth");
+    Route::get("user-buruk/{slug}", "delete")->middleware("auth");
+    Route::get("user-hapus/{slug}", "hapus")->middleware("auth");
+    Route::get("dihapus-user", "lihat")->middleware("auth");
+    Route::get("memulih-user/{slug}", "memulihkan")->middleware("auth");
 });
 Route::controller(BookController::class)->group(function(){
     Route::get("books","index")->middleware("auth");
