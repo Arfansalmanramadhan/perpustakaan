@@ -39,6 +39,10 @@ Route::controller(BookController::class)->group(function(){
     Route::post("tambah-buku","store")->middleware("auth");
     Route::get("edit-buku/{slug}","edit")->middleware("auth");
     Route::post("edit-buku/{slug}","update")->middleware("auth");
+    Route::get("hapus-buku/{slug}","hapus")->middleware("auth");
+    Route::get("hapuss-buku/{slug}","hapuss")->middleware("auth");
+    Route::get("dihapus-buku","hapusss")->middleware("auth");
+    Route::get("memulih-buku/{slug}","memulihkan")->middleware("auth");
 });
 Route::controller(kategoriController::class)->group(function () {
     Route::get("kategori",  "index")->middleware("auth");

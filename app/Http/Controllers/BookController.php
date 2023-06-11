@@ -59,5 +59,32 @@ class BookController extends Controller
         }
         return redirect("books")->with("status", "edit Buku sukses");
     }
-    
+    public function hapus($slug)
+    {
+        $buku = Book::where('slug', $slug)->first();
+        return view("hapus-buku", ["buku" => $buku]);
+        // dd($slug);  
+    }
+    public function hapuss($slug)
+    {
+        $kategori = Book::where('slug', $slug)
+            ->first()
+            ->delete();
+        return redirect("books")->with("status", "Hapus Buku sukses");
+    }
+    public function hapusss()
+    {
+        
+        $lihatdataterhapus = Book::onlyTrashed()->get();
+        // dd($lihatdataterhapus);
+        return view("lihatdatabukudihapus", ["lihatdataterhapus" => $lihatdataterhapus]);
+    }
+    public function memulihkan($slug)
+    {
+        $kategori = Book::withTrashed()
+            ->where("slug", $slug)
+            ->first()
+            ->restore();
+        return redirect("books")->with("status", "Memulihkan Buku sukses");
+    }
 }
