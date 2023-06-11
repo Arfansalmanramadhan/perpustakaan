@@ -14,7 +14,16 @@ class UserController extends Controller
     }
     public function user()
     {
-        $user = User::where("role_id", 2)->get();
+        $user = User::where("role_id", 2)
+            ->where('status', 'active')
+            ->get();
         return view("user", ["user" => $user]);
+    }
+    public function register()
+    {
+        $register = User::where('status', 'inactive')
+            ->where("role_id", 2)
+            ->get();
+        return view("regsterPengguna", ["register" => $register]);
     }
 }

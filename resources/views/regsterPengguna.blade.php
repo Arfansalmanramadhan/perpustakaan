@@ -3,10 +3,10 @@
 @section('title', "Pengguna")
     
 @section('content')
-    <h1>user</h1>
+    <h1>Daftar perngguna baruv </h1>
     <div class="mt-5 d-flex justify-content-end">
         <a href="@" class="btn btn-secondary me-3">Lihat melarang pengguna</a>
-        <a href="regigteruser" class="btn btn-primary">Lihat register baru</a>
+        <a href="/user" class="btn btn-primary">Lihat register baru</a>
     </div>
     <div class="my-5">
         <table class="table">
@@ -18,7 +18,7 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach ($user as $item)
+                @foreach ($register as $item)
                     <tr>
                         <td>{{$loop->iteration}}</td>
                         <td>{{$item->username}}</td>
