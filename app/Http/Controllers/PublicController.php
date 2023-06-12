@@ -11,14 +11,14 @@ class PublicController extends Controller
     public function index(Request $request)
     {
         $kategori = Catagory::all();
-
+        // dd($request->all());
         if ($request->catagori || $request->title) {
             $buku = Book::where('title', 'like', '%' . $request->title . '%')
                 ->whereHas('catagories', function ($a) use ($request) {
-                    $a->where("catagories.id", $request->catagory);
+                    $a->where("catagories.id", $request->catagori);
                 })->get();
             $buku = Book::whereHas('catagories', function ($a) use ($request) {
-                $a->where("catagories.id", $request->catagory);
+                $a->where("catagories.id", $request->catagori);
             })->get();
         } else {
             $buku = Book::all();

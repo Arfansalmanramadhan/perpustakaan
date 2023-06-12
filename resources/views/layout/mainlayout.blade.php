@@ -28,38 +28,44 @@
                             @if (Auth::user())
                                 @if (Auth::user()->role_id == 1)
                                     
-                                    <li class="nav-item">
-                                      <a  aria-current="page" href="/dashboard" @if ( request()->route()->uri == "dashboard") class="  active" @endif>Dashboard</a>
-                                    </li>
-                                    <li class="nav-item">
-                                      <a   href="/books" @if ( request()->route()->uri == "books") class="  active" @endif>buku</a>
-                                    </li>
-                                    <li class="nav-item">
-                                      <a   href="/kategori" @if ( request()->route()->uri == "kategori") class="  active" @endif>Kategori</a>
-                                    </li>
-                                    <li class="nav-item">
-                                      <a   href="/user" @if ( request()->route()->uri == "user") class="  active" @endif>Pengguna</a>
-                                    </li>
-                                    <li class="nav-item">
-                                      <a  href="/pinjam" @if ( request()->route()->uri == "pinjam") class="  active" @endif>Peminjam</a>
-                                    </li>
-                                    <li class="nav-item">
-                                      <a @if ( request()->route()->uri == "/")class=" active" @endif href="/">Daftar Buku</a>
-                                    </li>
-                                    <li class="nav-item">
-                                      <a class="nav-link " href="logout">Keluar</a>
-                                    </li>
+                                      <li class="nav-item">
+                                        <a  aria-current="page" href="/dashboard" @if ( request()->route()->uri == "dashboard") class="  active" @endif>Dashboard</a>
+                                      </li>
+                                      <li class="nav-item">
+                                        <a   href="/books" @if ( request()->route()->uri == "books") class="  active" @endif>buku</a>
+                                      </li>
+                                      <li class="nav-item">
+                                        <a   href="/kategori" @if ( request()->route()->uri == "kategori") class="  active" @endif>Kategori</a>
+                                      </li>
+                                      <li class="nav-item">
+                                        <a   href="/user" @if ( request()->route()->uri == "user") class="  active" @endif>Pengguna</a>
+                                      </li>
+                                      <li class="nav-item">
+                                        <a  href="/pinjam" @if ( request()->route()->uri == "pinjam") class="  active" @endif>Peminjam</a>
+                                      </li>
+                                      <li class="nav-item">
+                                        <a @if ( request()->route()->uri == "/")class=" active" @endif href="/">Daftar Buku</a>
+                                      </li>
+                                      <li class="nav-item">
+                                        <a @if ( request()->route()->uri == "pinjambuku")class=" active" @endif href="/pinjambuku">Pinjam Buku</a>
+                                      </li>
+                                      <li class="nav-item">
+                                        <a class="nav-link " href="logout">Keluar</a>
+                                      </li>
                                     
                                     @else     
-                                    <li class="nav-item">
-                                      <a @if ( request()->route()->uri == "profile")class=" active" @endif href="profile">Profile</a>
-                                    </li>
-                                    <li class="nav-item">
-                                      <a @if ( request()->route()->uri == "/")class=" active" @endif href="/">Daftar Buku</a>
-                                    </li>
-                                    <li class="nav-item">
-                                      <a class="nav-link" href="logout">Keluar</a>
-                                    </li>
+                                      <li class="nav-item">
+                                        <a @if ( request()->route()->uri == "profile")class=" active" @endif href="profile">Profile</a>
+                                      </li>
+                                      <li class="nav-item">
+                                        <a @if ( request()->route()->uri == "/")class=" active" @endif href="/">Daftar Buku</a>
+                                      </li>
+                                      <li class="nav-item">
+                                        <a @if ( request()->route()->uri == "/pinjambuku")class=" active" @endif href="/pinjambuku">Pinjam Buku</a>
+                                      </li>
+                                      <li class="nav-item">
+                                        <a class="nav-link" href="logout">Keluar</a>
+                                      </li>
                                     @endif
                               @else
                                 <li class="nav-item">
