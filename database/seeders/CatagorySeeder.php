@@ -21,7 +21,7 @@ class CatagorySeeder extends Seeder
         Schema::enableForeignKeyConstraints();
 
         $data = [
-            "Komik dan Novel", "Biografi", "Buku Pembelajaran", "Cerpen", "Literasi", "Bahasa Indonesia dan Asing", "Sains dan Teknologi", "Psikologi dan Religi", "Pengetahuan Umum"
+            "Komik dan Novel", "Literasi", "Bahasa Indonesia dan Asing", "Sains dan Teknologi"
         ];
         foreach ($data as $hasil) {
             Catagory::insert([

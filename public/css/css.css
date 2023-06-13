@@ -25,6 +25,7 @@
 .card-data {
     border: solid 1px black;
     padding: 20px 30px;
+    border-radius: 15px;
 }
 .card-data i {
     font-size: 50px;

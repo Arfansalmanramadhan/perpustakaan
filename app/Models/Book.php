@@ -18,6 +18,7 @@ class Book extends Model
     protected $fillable = [
         "book_code",
         "title",
+        "cover",
         "slug",
     ];
     public function sluggable(): array

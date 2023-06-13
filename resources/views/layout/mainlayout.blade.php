@@ -50,7 +50,7 @@
                                         <a @if ( request()->route()->uri == "pinjambuku")class=" active" @endif href="/pinjambuku">Pinjam Buku</a>
                                       </li>
                                       <li class="nav-item">
-                                        <a class="nav-link " href="logout">Keluar</a>
+                                        <a class="nav-link " href="/logout">Keluar</a>
                                       </li>
                                     
                                     @else     
@@ -60,16 +60,16 @@
                                       <li class="nav-item">
                                         <a @if ( request()->route()->uri == "/")class=" active" @endif href="/">Daftar Buku</a>
                                       </li>
-                                      <li class="nav-item">
+                                      {{-- <li class="nav-item">
                                         <a @if ( request()->route()->uri == "/pinjambuku")class=" active" @endif href="/pinjambuku">Pinjam Buku</a>
-                                      </li>
+                                      </li> --}}
                                       <li class="nav-item">
-                                        <a class="nav-link" href="logout">Keluar</a>
+                                        <a class="nav-link" href="/logout">Keluar</a>
                                       </li>
                                     @endif
                               @else
                                 <li class="nav-item">
-                                  <a class="nav-link" href="login">login</a>
+                                  <a class="nav-link" href="/login">login</a>
                                 </li>
                               @endif
 

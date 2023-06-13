@@ -33,9 +33,9 @@
             <div class="md-3">
                 <label for="lihatCover" style="display: block">Lihat cover</label>
                 @if ($buku->cover!='')
-                    <img src="{{asset("storage/cover/".$buku->cover)}}" alt="">
+                    <img src="{{asset("storage/cover/".$buku->cover)}}" alt="" width='300px'>
                 @else
-                <img src="{{asset("storage/cover-not-found.jpg/")}}" alt="">
+                <img src="{{asset("storage/cover-not-found.jpg/")}}" alt="" width='300px'>
                 @endif
             </div>
             <div class="md-3">
