@@ -5,6 +5,7 @@ use App\Http\Controllers\BookController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\kategoriController;
 use App\Http\Controllers\pempinjamController;
+use App\Http\Controllers\PinjamBukuCoontroller;
 use App\Http\Controllers\PublicController;
 use App\Http\Controllers\UserController;
 use GuzzleHttp\Middleware;
@@ -65,3 +66,4 @@ Route::controller(kategoriController::class)->group(function () {
 });
 
 Route::get("pinjam", [pempinjamController::class, "index"])->middleware("auth");
+Route::get("pinjambuku", [PinjamBukuCoontroller::class, "index"])->middleware(["auth", "admin"]);

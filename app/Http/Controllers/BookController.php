@@ -21,19 +21,21 @@ class BookController extends Controller
     public function store(Request $request)
     {
         // dd($request->all());
-        $validated = $request->validate([
+        $request->validate([
             "book_code" => "required |unique:books|max:200",
             "title" => "required |max:200"
         ]);
 
         $namaBaru = '';
-        if ($request->file('cover')) {
-            $extension = $request->file("cover")->getClientOriginalExtension();
-            $namaBaru = $request->title.'-'. now()->timestamp.'.'.$extension;
-            $request->file("cover")->storeAs('cover', $namaBaru);
+        if ($request->file('img')) {
+            $extension = $request->file("img")->getClientOriginalExtension();
+            $namaBaru = $request->title.'-'. now()->timestamp. '.'.$extension;
+            $request->file("img")->storeAs('cover', $namaBaru);
         }
+        // dd($namaBaru);
         $request['cover'] = $namaBaru;
         $Buku = Book::create($request->all());
+        // dd($Buku);
         $Buku->Catagories()->sync($request->catagories);
         return redirect("books")->with("status", "Tambah Buku sukses");
     }
@@ -41,20 +43,20 @@ class BookController extends Controller
     {
         $buku = Book::where('slug', $slug)->first();
         $kategori = Catagory::all();
-        return view("edit-buku", ["kategori"=> $kategori, "buku"=>$buku]);
+        return view("edit-buku", ["kategori" => $kategori, "buku" => $buku]);
     }
     public function update(Request $request, $slug)
     {
-        $namaBaru = '';
-        if ($request->file('cover')) {
-            $extension = $request->file("cover")->getClientOriginalExtension();
-            $namaBaru = $request->title.'-'. now()->timestamp.'.'.$extension;
-            $request->file("cover")->storeAs('cover', $namaBaru);
+        $namaBaru = ''; 
+        if ($request->file('img')) {
+            $extension = $request->file("img")->getClientOriginalExtension();
+            $namaBaru = $request->title . '-' . now()->timestamp . '.' . $extension;
+            $request->file("img")->storeAs('cover', $namaBaru);
         }
         $request['cover'] = $namaBaru;
         $buku = Book::where('slug', $slug)->first()
-                ->update($request->all());
-        if($request->catagoris){
+            ->update($request->all());
+        if ($request->catagoris) {
             $buku->Catagories()->sync($request->catagories);
         }
         return redirect("books")->with("status", "edit Buku sukses");
@@ -74,7 +76,7 @@ class BookController extends Controller
     }
     public function hapusss()
     {
-        
+
         $lihatdataterhapus = Book::onlyTrashed()->get();
         // dd($lihatdataterhapus);
         return view("lihatdatabukudihapus", ["lihatdataterhapus" => $lihatdataterhapus]);

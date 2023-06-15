@@ -27,11 +27,11 @@
                 <input type="text" name="title" class="form-control" placeholder="Judul buku" value="{{old("title")}}">
             </div>
             <div class="md-3">
-                <label for="cover" class="form-label">Kover : </label>
-                <input type="file" name="cover" class="form-control"">
+                <label for="img" class="form-label">Kover : </label>
+                <input type="file" name="img" class="form-control"">
             </div>
             <div class="md-3">
-                <label for="kategori" class="form-label">Kover : </label>
+                <label for="kategori" class="form-label">Kategori : </label>
                 <select  name="catagories[]" class="form-control select-multiple" multiple>
                     <option value="">Pilih Kategori</option>
                     @foreach ($kategori as $item)
