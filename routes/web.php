@@ -68,4 +68,4 @@ Route::controller(PinjamBukuCoontroller::class)->group(function () {
     Route::get("pinjambuku", "index")->middleware(["auth", "admin"]);
     Route::post("pinjambuku", "store")->middleware(["auth", "admin"]);
 });
-Route::get("pinjam", [pempinjamController::class, "index"])->middleware("auth");
+Route::get("pinjam", [pempinjamController::class, "index"])->middleware(["auth", "admin"]);

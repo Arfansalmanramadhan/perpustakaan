@@ -34,4 +34,9 @@
             <input type="text" class="form-control" readonly value="{{$user->status}}" >
         </div>
     </div>
+
+    <div class="mt-5">
+        <h2>Log Pinjam Penguna</h2>
+        <x-pinjam-tabel :catatan='$catatan' />
+    </div>
 @endsection
