@@ -3,13 +3,16 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Models\RentLogs;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
     public function profile(Request $request)
     {
-        return view("profile");
+        $catatanPinjam = RentLogs::with(['user', 'book'])->where('user_id', Auth::user()->id)->get();
+        return view("profile", ["catatan" => $catatanPinjam]);
         // $request->session()->flush();
     }
     public function user()
@@ -31,7 +34,8 @@ class UserController extends Controller
         // dd($slug);
         $user = User::where('slug', $slug)
             ->first();
-        return view('user-detail', ["user" => $user]);
+        $catatanPinjam = RentLogs::with(['user', 'book'])->where('user_id', $user->id)->get();
+        return view('user-detail', ["user" => $user, "catatan" => $catatanPinjam]);
     }
     public function menyetujui($slug)
     {
@@ -66,4 +70,3 @@ class UserController extends Controller
         return redirect("user")->with("status", "Memulihkan user sukses");
     }
 }
-    

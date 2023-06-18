@@ -14,7 +14,7 @@ class PinjamBukuCoontroller extends Controller
 {
     public function index()
     {
-        $pengguna = User::where('id', '!=', 1)->get();
+        $pengguna = User::where('id', '!=', 1)->where('status', '!=', "inactive")->get();
         $buku = Book::all();
         return view("pinjambuku", ['pengguna' => $pengguna, 'buku' => $buku]);
     }
