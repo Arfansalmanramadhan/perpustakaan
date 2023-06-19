@@ -4,7 +4,8 @@
     
 @section('content')
     <div class="mt-5">
-        <h2>Log Pinjam Penguna</h2>
+        <h1>Salamat Datang, {{Auth::user()->username}} daftar peminjaman buku anda</h1>
+        <h2>Daftar Pinjam {{Auth::user()->username}}</h2>
         <x-pinjam-tabel :catatan='$catatan' />
     </div>
 @endsection

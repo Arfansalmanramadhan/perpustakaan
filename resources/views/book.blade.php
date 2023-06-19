@@ -1,6 +1,6 @@
 @extends('layout.mainlayout')
 
-@section('title', "book")
+@section('title', "Buku")
     
 @section('content')
     <h1>Daftar buku</h1>

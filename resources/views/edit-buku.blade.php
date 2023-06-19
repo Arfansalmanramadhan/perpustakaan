@@ -1,11 +1,11 @@
 @extends('layout.mainlayout')
 
-@section('title', "Tambah Buku ")
+@section('title', "Edit Buku ")
 @section('page-name', "Dashboard")
     
 @section('content')
 <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
-    <h1>Tambah Data Baru</h1>
+    <h1>Edit Data Buku</h1>
     <div class="mt-5 w-50">
         @if ($errors->any())
         <div class="alert alert-danger">

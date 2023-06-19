@@ -35,10 +35,10 @@
                                         <a   href="/books" @if ( request()->route()->uri == "books") class="  active" @endif>buku</a>
                                       </li>
                                       <li class="nav-item">
-                                        <a   href="/kategori" @if ( request()->route()->uri == "kategori") class="  active" @endif>Kategori</a>
+                                        <a   href="/kategori" @if ( request()->route()->uri == "kategori" || request()->route()->uri == "tambah-kategori" || request()->route()->uri == "edit-kategori/{slug}" || request()->route()->uri == "hapus-kategori/{slug}" || request()->route()->uri == "dihapus-kategori" || request()->route()->uri == "memuli-kategori/{slug}") class="  active" @endif>Kategori</a>
                                       </li>
                                       <li class="nav-item">
-                                        <a   href="/user" @if ( request()->route()->uri == "user") class="  active" @endif>Pengguna</a>
+                                        <a   href="/user" @if ( request()->route()->uri == "user" || request()->route()->uri == "tambah-kategori" || request()->route()->uri == "user-detail/{slug}" || request()->route()->uri == "user-approve/{slug}" || request()->route()->uri == "user-buruk/{slug}" || request()->route()->uri == "user-hapus/{slug}" || request()->route()->uri == "dihapus-user/{slug}" || request()->route()->uri == "memulih-user/{slug}") class="  active" @endif>Pengguna</a>
                                       </li>
                                       <li class="nav-item">
                                         <a  href="/pinjam" @if ( request()->route()->uri == "pinjam") class="  active" @endif>Peminjam</a>
@@ -48,6 +48,9 @@
                                       </li>
                                       <li class="nav-item">
                                         <a @if ( request()->route()->uri == "pinjambuku")class=" active" @endif href="/pinjambuku">Pinjam Buku</a>
+                                      </li>
+                                      <li class="nav-item">
+                                        <a @if ( request()->route()->uri == "pengembalianbuku")class=" active" @endif href="/pengembalianbuku">Pengembalian Buku</a>
                                       </li>
                                       <li class="nav-item">
                                         <a class="nav-link " href="/logout">Keluar</a>

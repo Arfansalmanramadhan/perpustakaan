@@ -42,19 +42,7 @@
         
     </div>
     <div class="mt-5">
-        <h2>Pinjam Buku</h2>
-        <table class="table">
-            <thead>
-                <tr>
-                    <th>No</th>
-                    <th>Pengguna</th>
-                    <th>Judul Buku</th>
-                    <th>Tannggal Pinjam</th>
-                    <th>Tanggal Kemabali</th>
-                    <th>Tanggal kapan kembaliin Buku</th>
-                    <th>Status</th>
-                </tr>
-            </thead>
-        </table>
+        <h2>Log Pinjam Buku</h2>
+        <x-pinjam-tabel :catatan='$catatan' />
     </div>
 @endsection

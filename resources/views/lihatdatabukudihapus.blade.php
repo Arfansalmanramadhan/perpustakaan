@@ -1,6 +1,6 @@
 @extends('layout.mainlayout')
 
-@section('title', "category")
+@section('title', "Data buku terhapus")
 {{-- @section('page-name', "Dashboard") --}}
     
 @section('content')

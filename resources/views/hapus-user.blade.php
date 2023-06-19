@@ -1,6 +1,6 @@
 @extends('layout.mainlayout')
 
-@section('title', "Hapus User ")
+@section('title', "Hapus Pengguna ")
 @section('page-name', "Dashboard")
     
 @section('content')

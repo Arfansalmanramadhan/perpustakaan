@@ -1,6 +1,6 @@
 @extends('layout.mainlayout')
 
-@section('title', "category")
+@section('title', "Kategori")
 {{-- @section('page-name', "Dashboard") --}}
     
 @section('content')
@@ -32,8 +32,8 @@
                         <td>{{$loop->iteration}}</td>
                         <td>{{$item->name}}</td>
                         <td>
-                            <a href="edit-kategori/{{$item->slug}}">Edit</a>
-                            <a href="hapus-kategori/{{$item->slug}}">Delete</a>
+                            <a href="/edit-kategori/{{$item->slug}}">Edit</a>
+                            <a href="/hapus-kategori/{{$item->slug}}">Delete</a>
                         </td>
                     </tr>
                 @endforeach

@@ -67,5 +67,7 @@ Route::controller(kategoriController::class)->group(function () {
 Route::controller(PinjamBukuCoontroller::class)->group(function () {
     Route::get("pinjambuku", "index")->middleware(["auth", "admin"]);
     Route::post("pinjambuku", "store")->middleware(["auth", "admin"]);
+    Route::get("pengembalianbuku", "pengembalianbuku")->middleware(["auth", "admin"]);
+    Route::post("pengembalianbuku", "store2")->middleware(["auth", "admin"]);
 });
 Route::get("pinjam", [pempinjamController::class, "index"])->middleware(["auth", "admin"]);
