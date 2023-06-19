@@ -1,6 +1,6 @@
 @extends('layout.mainlayout')
 
-@section('title', "category")
+@section('title', "Peminjam")
     
 @section('content')
     <h1>Daftar log peminjaman</h1>

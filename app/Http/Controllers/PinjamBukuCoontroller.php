@@ -57,4 +57,30 @@ class PinjamBukuCoontroller extends Controller
             }
         }
     }
+    public function pengembalianbuku()
+    {
+        $pengguna = User::where('id', '!=', 1)->where('status', '!=', "inactive")->get();
+        $buku = Book::all();
+        return view("pengembalianbuku", ['pengguna' => $pengguna, 'buku' => $buku]);
+    }
+    public function store2(Request $request)
+    {
+        $kembali = RentLogs::where("user_id", $request->user_id)->where("book_id", $request->book_id)->where("actual_return_date", null);
+        $tanggalPinjam = $kembali->first();
+        $megitungTanggal = $kembali->count();
+
+        if ($megitungTanggal == 1) {
+            $tanggalPinjam->actual_return_date = Carbon::now()->toDateString();
+            // $tanggalPinjam->return_date = Carbon::now()->isPast();
+            $tanggalPinjam->save();
+            Session::flash("message", "Pengembalian buku sukses");
+            Session::flash("alert-class", "alert-success");
+            return redirect("pengembalianbuku");
+            // dd($tanggalPinjam);
+        } else {
+            Session::flash("message", "Ada kesalahan dalam proses");
+            Session::flash("alert-class", "alert-danger");
+            return redirect("pengembalianbuku");
+        }
+    }
 }

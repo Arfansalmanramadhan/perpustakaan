@@ -3,7 +3,7 @@
 @section('title', "Pengguna")
     
 @section('content')
-    <h1>Daftar perngguna baruv </h1>
+    <h1>Daftar perngguna baru </h1>
     <div class="mt-5 d-flex justify-content-end">
         <a href="/user" class="btn btn-primary">Lihat register baru</a>
     </div>
